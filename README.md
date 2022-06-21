@@ -2,6 +2,8 @@
 
 Welcome to my Demo Day project; an app designed to assist healthcare administration in scheduling their available staff and in keeping track of their paid time off.
 
+Note: Remember to run npm install!
+
 #### Link to Project: 
 
 ![Screen Shot 2022-06-21 at 5 32 21 PM](https://user-images.githubusercontent.com/101993328/174900890-1aa721cc-0dc9-4d53-8028-e059b15e03b9.png)
