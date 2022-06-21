@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>TDS</title>
+  <script src="https://kit.fontawesome.com/e3b231881d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body class="profileBody">
+
+  <header>
+    <a href="" class="logoLink"><img class="logo" src="/img/logo.png" alt="logo"></a>
+    <h2 class="titleEditStaff">Tʜᴇ Dᴀɪʟʏ Sᴄʜᴇᴅᴜʟᴇ</h2>
+    <section class="header-right clearFix">
+      <a class="active" href="/">Home</a>
+      <a href="/createStaff"> Staff</a>
+      <a href="/schedule">Schedule</a>
+      <a href="/logout">Sign Out</a>
+    </section>
+  </header>
+
+  <section class="container">
+
+    <h1> Edit A Staff Member </h1>
+
+    <h2>Editing <%= nurses.name %>'s Preferences</h2>
+
+    <section class="bigChecklist clearFix">
+      <form class="editStaff">
+        <h3 class="staffMemberName">
+          <%= nurses.name %>
+        </h3>
+
+        <h4>Staff ID</h4>
+        <h5 class="staffMemberId">
+          <%= nurses._id %>
+        </h5>
+
+        <h3>Unit</h3>
+        <input type="text" name="name" value="<%= nurses.name %>" hidden>
+        <input type="text" name="type" value="<%= nurses.type %>" hidden>
+        <input type="radio" name="dept" <% if(nurses.dept==="Seaport 1" ) { %> checked="checked" <% } %> value="Seaport
+          1" >
+          <label for="dept"> Seaport 1</label><br>
+
+          <input type="radio" name="dept" <% if(nurses.dept==="Seaport 2" ) { %> checked="checked" <% } %>
+            value="Seaport 2" >
+            <label for="dept"> Seaport 2</label><br>
+
+            <input type="radio" name="dept" <% if(nurses.dept==="Bayside" ) { %> checked="checked" <% } %>
+              value="Bayside" >
+              <label for="dept"> Bayside</label><br>
+
+              <input type="radio" name="dept" <% if(nurses.dept==="Cityside" ) { %> checked="checked" <% } %>
+                value="Cityside" >
+                <label for="dept"> Cityside</label><br>
+
+                <input type="radio" name="dept" <% if(nurses.dept==="Harborside 1" ) { %> checked="checked" <% } %>
+                  value="Harborside 1" >
+                  <label for="dept"> Harborside 1</label><br>
+
+                  <input type="radio" name="dept" <% if(nurses.dept==="Harborside 2" ) { %> checked="checked" <% } %>
+                    value="Harborside 2" >
+                    <label for="dept"> Harborside 2</label><br>
+
+                    <h3>Hours</h3>
+
+                    <input type="radio" name="shift" <% if(nurses.shift==="7-3" ) { %> checked="checked" <% } %>
+                      value="7-3" >
+                      <label for="shift"> 7-3</label><br>
+
+                      <input type="radio" name="shift" <% if(nurses.shift==="3-11" ) { %> checked="checked" <% } %>
+                        value="3-11" >
+                        <label for="shift"> 3-11</label><br>
+
+                        <input type="radio" name="shift" <% if(nurses.shift==="11-7" ) { %> checked="checked" <% } %>
+                          value="11-7" >
+                          <label for="shift"> 11-7</label><br>
+      </form>
+
+      <button class="editButton"> Make Changes</button>
+    </section>
+
+    <h2>Does This Staff Member Have PTO Scheduled?</h2>
+    <section class="pto">
+      <form action="/addDaysOff" method="post">
+        <input type="text" name="name" value="<%= nurses.name %>" hidden>
+        <input type="text" name="staffID" value="<%= nurses._id %>" hidden>
+        <input type="date" id="ptoStart" name="ptoStart">
+        <input type="date" id="ptoEnd" name="ptoEnd">
+        <button class="editButton">Submit</button>
+      </form>
+
+      <% for(let i = 0; i < daysOff.length; i++) {%>
+        <section>
+          <h3>Upcoming PTO</h3>
+          <ul class="PTODates">
+              <li data-id= <%= daysOff[i]._id %> class="daysOffList"> <%= daysOff[i].dates[0] %> - <%= daysOff[i].dates[daysOff[i].dates.length-1] %>
+              <span><i class="fa-solid fa-delete-left editDelete"></i></span></li>
+          </ul>
+        </section>
+      <% } %>
+    </section>
+
+  </section>
+
+  <footer></footer>
+
+  <script src="/main.js"></script>
+
+</body>
+
+</html>

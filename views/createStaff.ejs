@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+  <title>TDS</title>
+  <script src="https://kit.fontawesome.com/e3b231881d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="profileBody">
+
+  <header>
+    <a href="" class="logoLink"><img class="logo" src="img/logo.png" alt="logo"></a>
+    <h2 class="titleCreateStaff">Tʜᴇ Dᴀɪʟʏ Sᴄʜᴇᴅᴜʟᴇ</h2>
+    <section class="header-right clearFix">
+        <a class="active" href="/">Home</a>
+        <a href="/schedule">Schedule</a>
+        <a href="/logout">Sign Out</a>
+    </section>
+  </header>
+
+  <section class="container">
+
+    <h1> All Nursing Staff </h1>
+
+    <h3>Create a New Staff Member</h3>
+    <form action="/nurses" method="POST">
+      <input type="text" placeholder="full name" name="nurseName">
+      <select name="type">
+        <option value="CNA">CNA</option>
+        <option value="RN">RN</option>
+        <option value="LPN">LPN</option>
+        <option value="NP">NP</option>
+      </select>
+      <select name="department">
+        <option value="Seaport 1">Seaport 1</option>
+        <option value="Seaport 2">Seaport 2</option>
+        <option value="Cityside">Cityside</option>
+        <option value="Bayside">Bayside</option>
+        <option value="Harborside 1">Harborside 1</option>
+        <option value="Harborside 2">Harborside 2</option>
+      </select>
+      <select name="shift">
+        <option value="7-3">7-3</option>
+        <option value="3-11">3-11</option>
+        <option value="11-7">11-7</option>
+      </select>
+      <button class="submitButton" type="submit">Submit</button>
+    </form>
+  </section>
+  
+  <section>
+    <ul class="nurses createStaff">
+      <% for(let i = 0; i < nurses.length; i++) {%>
+        <li class="nurse">
+          <span><%= nurses[i].name %></span>,
+          <span><%= nurses[i].type %></span> |
+          <span><%= nurses[i].dept %></span> |
+          <span><%= nurses[i].shift %></span>
+          <span><i class="fa-solid fa-delete-left createStaffDelete"></i></span>
+          <a class="editlink" href="/editStaff/<%= nurses[i]._id %>"><span><i class="fa-solid fa-pen-to-square"></i></span></a>
+        </li>
+      <% } %>
+    </ul>
+  </section>
+  
+  <footer></footer>
+
+<script src="main.js"></script>
+
+</body>
+</html>

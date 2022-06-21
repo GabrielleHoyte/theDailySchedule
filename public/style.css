@@ -1,0 +1,201 @@
+*{
+  box-sizing: border-box;
+}
+.clearFix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+body{
+  font-family: arial;
+  word-wrap:break-word;
+  background-color: #00acff;
+  color: #010033;
+}
+.container{
+  text-align: center;
+}
+.logo{
+  height: 50px;
+}
+.title{
+  color: white;
+  margin: 0;
+  padding-left: 3%;
+  font-weight: lighter;
+}
+.titleCreateStaff{
+  color: white;
+  margin: 0;
+  padding-left: 9%;
+  margin-top: 2%;
+  font-weight: lighter;
+}
+.titleSchedule{
+  color: white;
+  margin: 0;
+  padding-left: 7%;
+  margin-top: 2%;
+  font-weight: lighter;
+}
+.titleEditStaff{
+  color: white;
+  margin: 0;
+  padding-left: 15%;
+  margin-top: 2%;
+  font-weight: lighter;
+}
+header{
+  overflow: hidden;
+  padding-left: 1%;
+  padding-right: 1%;
+  display: flex;
+  justify-content: space-between;
+}
+header a {
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+.header a.logoLink {
+  font-size: 25px;
+  font-weight: bold;
+}
+header a:hover {
+  background-color: #008dd3;
+  color: #010033;
+}
+.title, .header-right {
+  padding-top: 2%;
+}
+.signIn, .newUser{
+  height: 200px;
+  width: 200px;
+  background-color: white;
+  border-radius: 10px;
+  border-style: none;
+  font-size: 30px;
+  margin: 1%;
+  color: #010033;
+}
+.signIn:hover, .newUser:hover{
+  background-color: #008dd3;
+  color: white;
+}
+ul{
+  list-style: none;
+}
+li{
+  padding-top: 1%;
+}
+.seaportOne,
+.seaportTwo, 
+.cityside, 
+.bayside,
+.harborsideOne,
+.harborsideTwo{
+  float: left;
+  width: 31%;
+}
+.staffChecklist{
+  float: left;
+  width: 33%;
+}
+.schedule{
+  margin-right: 1%;
+  margin-left: 1%;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding-bottom: 1%;
+  height: 200px;
+  padding-left: 0;
+}
+.bigChecklist{
+  margin-top: 1%;
+}
+.editButton, .submitButton{
+  background-color: #00acff;
+  border-style: none;
+  color: white;
+  height: 30px;
+  border-radius: 5px;
+}
+.editButton:hover, .submitButton:hover{
+  background-color: #008dd3;
+  color: #010033;
+}
+.createStaff{
+  text-align: center;
+}
+.loginSignUp{
+  background-color: #00acff;
+  border-style: none;
+  color: white;
+  height: 35px;
+  width: 80px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.loginSignUp:hover{
+  background-color: #008dd3;
+  color: #010033;
+}
+.form-group{
+  margin-bottom: 1%;
+}
+hr{
+  width: 50%;
+}
+.daysOffList{
+  display: inline;
+}
+h1{
+  text-shadow: 2px 2px 5px #008dd3;
+}
+.intro{
+  width: 30%;
+  margin-left: 35%;
+  border: 1px solid #caecf9;
+  background-color: #caecf9;
+  border-radius: 10px;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+.calendarGif{
+  width: 200px;
+}
+.createStaff{
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 1%;
+  width: 33%;
+  margin-left: 33%;
+}
+.editlink:link {
+  color: #010033;
+}
+.editlink:visited {
+  color: #010033;
+}
+.availableStaff{
+  padding-right: 2%;
+}
+footer{
+  height: 100px;
+}
+.PTODates{
+  padding: 0;
+}
+footer {
+  height: 100px;
+}

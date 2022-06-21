@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+<head>
+  <title>TDS</title>
+  <script src="https://kit.fontawesome.com/e3b231881d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="profileBody">
+
+  <header>
+    <a href="" class="logoLink"><img class="logo" src="img/logo.png" alt="logo"></a>
+    <h2 class="titleSchedule">Tʜᴇ Dᴀɪʟʏ Sᴄʜᴇᴅᴜʟᴇ</h2>
+    <section class="header-right clearFix">
+        <a class="active" href="/">Home</a>
+        <a href="/createStaff"> Staff</a>
+        <a href="/logout">Sign Out</a>
+    </section>
+  </header>
+
+  <section class="container">
+
+    <h1> Today's Schedule </h1>
+
+    <section class="bigSchedule clearFix">
+      <ul class="schedule seaportOne">
+        <h4 class="unitNames">Seaport 1</h4>
+        <% for(let i = 0; i < schedule.length; i++) {%>
+          <% if(schedule[i].dept === 'Seaport 1') {%>
+          <li class="nurse">
+            <span><%= schedule[i].name %></span>,
+            <span><%= schedule[i].type %></span> |
+            <span><%= schedule[i].dept %></span> |
+            <span><%= schedule[i].shift %></span>
+            <span><i class="fa-solid fa-delete-left scheduleDelete"></i></span>
+          </li>
+          <% } %>
+        <% } %>
+      </ul>
+
+      <ul class="schedule seaportTwo">
+        <h4 class="unitNames">Seaport 2</h4>
+        <% for(let i = 0; i < schedule.length; i++) {%>
+          <% if(schedule[i].dept === 'Seaport 2') {%>
+          <li class="nurse">
+            <span><%= schedule[i].name %></span>,
+            <span><%= schedule[i].type %></span> |
+            <span><%= schedule[i].dept %></span> |
+            <span><%= schedule[i].shift %></span>
+            <span><i class="fa-solid fa-delete-left scheduleDelete"></i></span>
+          </li>
+          <% } %>
+        <% } %>
+      </ul>
+
+      <ul class="schedule cityside">
+        <h4 class="unitNames">Cityside</h4>
+        <% for(let i = 0; i < schedule.length; i++) {%>
+          <% if(schedule[i].dept === 'Cityside') {%>
+          <li class="nurse">
+            <span><%= schedule[i].name %></span>,
+            <span><%= schedule[i].type %></span> |
+            <span><%= schedule[i].dept %></span> |
+            <span><%= schedule[i].shift %></span>
+            <span><i class="fa-solid fa-delete-left scheduleDelete"></i></span>
+          </li>
+          <% } %>
+        <% } %>
+      </ul>
+
+      <ul class="schedule bayside">
+        <h4 class="unitNames">Bayside</h4>
+        <% for(let i = 0; i < schedule.length; i++) {%>
+          <% if(schedule[i].dept === 'Bayside') {%>
+          <li class="nurse">
+            <span><%= schedule[i].name %></span>,
+            <span><%= schedule[i].type %></span> |
+            <span><%= schedule[i].dept %></span> |
+            <span><%= schedule[i].shift %></span>
+            <span><i class="fa-solid fa-delete-left scheduleDelete"></i></span>
+          </li>
+          <% } %>
+        <% } %>
+      </ul>
+
+      <ul class="schedule harborsideOne">
+        <h4 class="unitNames">Harborside 1</h4>
+        <% for(let i = 0; i < schedule.length; i++) {%>
+          <% if(schedule[i].dept === 'Harborside 1') {%>
+          <li class="nurse">
+            <span><%= schedule[i].name %></span>,
+            <span><%= schedule[i].type %></span> |
+            <span><%= schedule[i].dept %></span> |
+            <span><%= schedule[i].shift %></span>
+            <span><i class="fa-solid fa-delete-left scheduleDelete"></i></span>
+          </li>
+          <% } %>
+        <% } %>
+      </ul>
+
+      <ul class="schedule harborsideTwo">
+        <h4 class="unitNames">Harborside 2</h4>
+        <% for(let i = 0; i < schedule.length; i++) {%>
+          <% if(schedule[i].dept === 'Harborside 2') {%>
+          <li class="nurse">
+            <span><%= schedule[i].name %></span>,
+            <span><%= schedule[i].type %></span> |
+            <span><%= schedule[i].dept %></span> |
+            <span><%= schedule[i].shift %></span>
+            <span><i class="fa-solid fa-delete-left scheduleDelete"></i></span>
+          </li>
+          <% } %>
+        <% } %>
+      </ul>
+    </section>
+
+    <h2>Available Staff</h2>
+
+    <section class="bigChecklist clearFix">
+      <ul class="nurses">
+        <h3 class="availableStaff"><%= nurses.length - PTOArray.length %></h1>
+
+        <% for(let i = 0; i < nurses.length; i++) {%>
+            <% if(PTOArray.indexOf(nurses[i].name) === -1) {%>
+          <form class="staffChecklist" action="/addToSchedule" method="post">
+            <h1><%= nurses[i].name %>, <%= nurses[i].type %></h1>
+            <input type="text" name="name" value="<%= nurses[i].name %>" hidden>
+            <input type="text" name="type" value="<%= nurses[i].type %>" hidden>
+            <input type="radio" name="dept" <% if(nurses[i].dept ==="Seaport 1") { %> checked="checked" <% } %> value="Seaport 1" >
+            <label for="dept"> Seaport 1</label><br>
+    
+            <input type="radio" name="dept" <% if(nurses[i].dept ==="Seaport 2") { %> checked="checked" <% } %> value="Seaport 2" >
+            <label for="dept"> Seaport 2</label><br>
+
+            <input type="radio" name="dept" <% if(nurses[i].dept ==="Bayside") { %> checked="checked" <% } %> value="Bayside" >
+            <label for="dept"> Bayside</label><br>
+    
+            <input type="radio" name="dept" <% if(nurses[i].dept ==="Cityside") { %> checked="checked" <% } %> value="Cityside" >
+            <label for="dept"> Cityside</label><br>
+
+            <input type="radio" name="dept" <% if(nurses[i].dept ==="Harborside 1") { %> checked="checked" <% } %> value="Harborside 1" >
+            <label for="dept"> Harborside 1</label><br>
+    
+            <input type="radio" name="dept" <% if(nurses[i].dept ==="Harborside 2") { %> checked="checked" <% } %> value="Harborside 2" >
+            <label for="dept"> Harborside 2</label><br>
+
+            <input type="radio" name="shift" <% if(nurses[i].shift ==="7-3") { %> checked="checked" <% } %> value="7-3" >
+            <label for="shift"> 7-3</label><br>
+    
+            <input type="radio" name="shift" <% if(nurses[i].shift ==="3-11") { %> checked="checked" <% } %> value="3-11" >
+            <label for="shift"> 3-11</label><br>
+
+            <input type="radio" name="shift" <% if(nurses[i].shift ==="11-7") { %> checked="checked" <% } %> value="11-7" >
+            <label for="shift"> 11-7</label><br>
+    
+            <button type="submit">Add to Schedule</button>
+          </form>
+            <% } %>
+        <% } %>
+      </ul>
+    </section>
+
+  </section>
+  
+  <footer></footer>
+
+<script src="main.js"></script>
+
+</body>
+</html>
