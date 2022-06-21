@@ -4,7 +4,7 @@ Welcome to my Demo Day project; an app designed to assist healthcare administrat
 
 #### Link to Project: 
 
-![Screen Shot 2022-06-21 at 5 24 23 PM](https://user-images.githubusercontent.com/101993328/174899904-536a4fc9-6fa7-4de1-bc32-82e27c167f2d.png)
+![Screen Shot 2022-06-21 at 5 32 21 PM](https://user-images.githubusercontent.com/101993328/174900890-1aa721cc-0dc9-4d53-8028-e059b15e03b9.png)
 
 ## How It's Made:
 Tech used: HTML, CSS, JavaScript, Node
